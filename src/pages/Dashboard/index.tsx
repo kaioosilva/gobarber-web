@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
-import { isToday, format, parse, parseISO, isAfter } from 'date-fns';
+import { isToday, format, parseISO, isAfter } from 'date-fns';
 import enUS from 'date-fns/locale/en-US';
 import DayPicker, { DayModifiers } from 'react-day-picker';
 import 'react-day-picker/lib/style.css';
@@ -8,6 +8,8 @@ import { FiClock, FiPower } from 'react-icons/fi';
 import logoImg from '../../assets/logo.svg';
 import { useAuth } from '../../hooks/Auth';
 import api from '../../services/api';
+
+import { Link } from 'react-router-dom';
 
 import { 
     Container, 
@@ -27,7 +29,7 @@ interface MonthAvailabilityItem {
     available: boolean;
 }
 
-interface Appointment {
+interface IAppointment {
     id: string;
     date: string;
     hourFormatted: string;
@@ -43,7 +45,7 @@ const Dashboard: React.FC = () => {
     const [selectedDate, setSelectedDate] = useState(new Date());
     const [currentMonth, setCurrentMonth] = useState(new Date());
     const [monthAvailability, setMonthAvailability] = useState<MonthAvailabilityItem[]>([]);
-    const [appointments, setAppointments] = useState<Appointment[]>([]);
+    const [appointments, setAppointments] = useState<IAppointment[]>([]);
 
     const handleDateChange = useCallback((day: Date, modifiers: DayModifiers) => {
         if(modifiers.available && !modifiers.disabled) {
@@ -67,7 +69,7 @@ const Dashboard: React.FC = () => {
     }, [currentMonth, user.id]);
 
     useEffect(() => {
-        api.get<Appointment[]>('/appointments/me', {
+        api.get<IAppointment[]>('/appointments/me', {
             params: {
                 year: selectedDate.getFullYear(),
                 month: selectedDate.getMonth() + 1,
@@ -141,7 +143,7 @@ const Dashboard: React.FC = () => {
                         />
                         <div>
                             <span>Welcome,</span>
-                            <strong>{user.name}</strong>
+                            <Link to="/profile"><strong>{user.name}</strong></Link>
                         </div>
                     </Profile>
 
