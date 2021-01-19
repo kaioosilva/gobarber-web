@@ -32,6 +32,8 @@ const Profile: React.FC = () => {
 
   const { user, updateUser } = useAuth();
 
+  console.log("user", user, "user.avatar_url", user.avatar_url);
+
   const handleSubmit = useCallback(
     async (data: ProfileFormData) => {
       try {
