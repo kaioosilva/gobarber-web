@@ -27,7 +27,7 @@
 Soon
 
 To see the **api**, click here: [GoBarber Rest API](https://github.com/kaioosilva/iniciando-back-end)</br>
-To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/kaioosilva/gobarber-mobile)
+To see the **mobile client**, click here: [GoBarber Mobile](https://github.com/kaioosilva/AppGoBarber)
 
 ## 🚀 Technologies
 
