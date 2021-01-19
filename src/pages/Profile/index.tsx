@@ -32,12 +32,11 @@ const Profile: React.FC = () => {
 
   const { user, updateUser } = useAuth();
 
-  console.log("user", user, "user.avatar_url", user.avatar_url);
-
   const handleSubmit = useCallback(
     async (data: ProfileFormData) => {
       try {
         formRef.current?.setErrors({});
+        
         const schema = Yup.object().shape({
           name: Yup.string().required("Name required"),
           email: Yup.string()
