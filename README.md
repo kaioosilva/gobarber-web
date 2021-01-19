@@ -42,9 +42,6 @@ Technologies that I used to develop this web client
 - [Styled Components](https://styled-components.com/)
 - [Polished](https://github.com/styled-components/polished)
 - [Axios](https://github.com/axios/axios)
-- [Husky](https://github.com/typicode/husky)
-- [Commitlint](https://github.com/conventional-changelog/commitlint)
-- [Commitizen](https://github.com/commitizen/cz-cli)
 - [Prettier](https://prettier.io/)
 - [EditorConfig](https://editorconfig.org/)
 
