@@ -38,10 +38,11 @@ const SignUp: React.FC = () => {
                 password: Yup.string().min(6, 'Min 6 characters'),
             });
 
+
             await schema.validate(data, {
                 abortEarly: false,
             });
-
+            
             await api.post('/users', data);
 
             history.push('/');
