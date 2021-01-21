@@ -75,11 +75,6 @@ describe('SignUp Page', () => {
 
     await waitFor(() => {
       expect(mockedHistoryPush).not.toHaveBeenCalled();
-      // expect(mockedAddToast).toHaveBeenCalledWith(
-      //   expect.objectContaining({
-      //     type: 'error',
-      //   }),
-      // );
     });
   });
 
